@@ -1,0 +1,38 @@
+<Page
+    x:Class="Capturas.DatosOrdenados"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Capturas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="1500"
+    Height="1000"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="NombresListView" SelectionChanged="NombresListView_SelectionChanged" Margin="0,0,1156,0" Background="LightSlateGray" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding N_Estacion}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Rectangle HorizontalAlignment="Left" Height="214" Margin="1178,542,0,0" Stroke="Orange" Fill="darkOrange" VerticalAlignment="Top" Width="215" RadiusX="50" RadiusY="50" />
+
+        <Button Content="Regresar" Click="Regresar_Click" Margin="979,688,0,0" VerticalAlignment="Top" Height="55" Width="181" CornerRadius="20" Background="	#d9ffb7" BorderBrush="Gray" FontSize="25" Foreground="#FF868686"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="1269,39,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/StoreLogo.png" RenderTransformOrigin="1.474,-0.466"/>
+        <Button Content="MergeSort" Click="MergeSort_Click" Margin="1195,600,0,0" VerticalAlignment="Top" Height="55" Width="181" CornerRadius="20" Background=" #d9ffb7" BorderBrush="Gray" FontSize="25" Foreground="#FF868686"/>
+        <Button Content="QuickSort" Click="QuickSort_Click" Margin="1195,680,0,0" VerticalAlignment="Top" Height="55" Width="181" CornerRadius="20" Background=" #d9ffb7" BorderBrush="Gray" FontSize="25" Foreground="#FF868686"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1215,550,0,0" TextWrapping="Wrap" Text="Ordenar por:" VerticalAlignment="Top" FontSize="25"/>
+        <ListView x:Name="NombresOrdenados" SelectionChanged="NombresOrdenados_SelectionChanged" Margin="339,0,817,0" Background="DarkOliveGreen" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding N_Estacion}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock x:Name="TiempoT" HorizontalAlignment="Left" Margin="750,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="20" />
+
+    </Grid>
+</Page>
